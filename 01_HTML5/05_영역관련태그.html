@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역관련태그</title>
+    <style>
+    div {
+        width: 200;
+        height: 200;
+        border: 1px solid black;
+    }
+    </style>
+</head>
+<body>
+    <!--
+        블럭요소 : 한 줄 단위로 영역을 차지함.
+                  줄바꿈이 적용되어 이미 존재하는 태그의 다음줄에 영역이 잡힘
+                  (p, pre, "div", ...)
+
+        인라인요소 : content(내용) 영역에 해당하는 부분만 영역을 차지하는 요소
+                    줄 바꿈이 적용되지 않아 옆으로 영역이 잡힘
+                    (다음줄로 넘기고자 한다면 직접 br 작성해야함)
+                    (b, mark, s, img, "span", ...)
+    -->
+    <h1>영역 관련 태그</h1>
+
+    <h2>div 태그와 span 태그의 차이점1 : 줄바꿈 적용</h2>
+
+    <h3>div태그</h3>
+    <p>div태그는 블럭요소로 한 줄 단위로 영역 차지(이미 존재하는 태그 다음줄에 영역이 잡힘)</p>
+    
+    <div style="background-color: red;">첫번째 영역</div>
+    <div style="background-color: orange;">두번째 영역</div>
+    <div style="background-color: yellow;">세번째 영역</div>
+
+    <h3>span 태그</h3>
+    <p>span 태그는 인라인 요소로 content 영역만 차지(줄바꿈이 발생되지 않고 옆으로 영역이 잡힘)</p>
+
+    <span style="background-color: green;">첫번째영역</span>
+    <span style="background-color: blue;">두번째영역</span>
+    <span style="background-color: purple;">세번째영역</span>
+
+    <hr>
+    <br>
+
+    <h2>div태그와 span 태그의 차이점 2 : 영역 지정 방식</h2>
+
+    <h3>div 태그 : 사각형 박스로 영역을 지정</h3>
+
+    <div style="background-color: aqua;">
+        그들은 오아이스도 못할 인간은 때까지 그것을 이상은 얼음에 있으랴?  <br>
+        용기가 불어 투명하되 반짝이는 청춘 눈에 청춘을 두손을 것이다. <br>
+        이성은 이상의 무엇을 용감하고 이상을 가치를 심장은 이상, 수 끓는다.  <br>
+        귀는 만물은 그들을 이상이 있다. 가치를 뜨거운지라, 청춘 물방아 피에 것이다. <br>
+        일월과 구할 몸이 구하기 예가 청춘을 못할 그들의 듣는다.  <br>
+        부패를 사람은 만천하의 그들은 우리는 풀이 힘있다.  <br>
+        충분히 있는 들어 힘차게 이상의 같은 품었기 심장의 할지라도 있다.  <br>
+        봄날의 뜨고, 크고 우리 내는 봄바람이다.  <br>
+
+       
+    </div>
+
+    <h3>span 태그 : 문장단위로 영역을 지정</h3>
+    <br>
+    <span style="background-color: aqua;">
+        그들은 오아이스도 못할 인간은 때까지 그것을 이상은 얼음에 있으랴?  <br>
+        용기가 불어 투명하되 반짝이는 청춘 눈에 청춘을 두손을 것이다. <br>
+        이성은 이상의 무엇을 용감하고 이상을 가치를 심장은 이상, 수 끓는다.  <br>
+        귀는 만물은 그들을 이상이 있다. 가치를 뜨거운지라, 청춘 물방아 피에 것이다. <br>
+        일월과 구할 몸이 구하기 예가 청춘을 못할 그들의 듣는다.  <br>
+        부패를 사람은 만천하의 그들은 우리는 풀이 힘있다.  <br>
+        충분히 있는 들어 힘차게 이상의 같은 품었기 심장의 할지라도 있다.  <br>
+        봄날의 뜨고, 크고 우리 내는 봄바람이다.  <br>
+    </span>
+
+    <hr>
+    <br>
+
+    <h1>iframe</h1>
+    <p>웹 문서안에 다른 웹 페이지를 추가하는 태그 (인라인 요소)</p>
+
+    <iframe src="04_이미지 및 멀티미디어관련태그.html" width="600" height="800" frameborder="0"></iframe>
+    <br><br>
+
+    <iframe src="<iframe width="500" height="300" src="https://www.youtube.com/embed/d8LkMzjfUFI" title="[뉴스포커스] 북 무인기에 뚫린 영공…군, 100여발 쏘고도 격추 실패 / 연합뉴스TV (YonhapnewsTV)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    
+</body>
+</html>
