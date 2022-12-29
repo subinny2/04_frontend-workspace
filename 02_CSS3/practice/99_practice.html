@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습하기</title>
+    <style>
+        /* CSS 영역은 title 밑에 기술 */
+        /* 지금 하는 것은 내부 스타일 방식
+            현재 이 문서에 적용시키고자 하는 스타일 정보들을 <style>태그 내에 기입하는 방식 */
+    </style>
+    <link rel="stylesheet" href="res">
+</head>
+<body>
+    <h2>1. 속성 선택자</h2>
+    <p>
+        선택하고자 하는 요소내에 작성되어있는 속성을 이용해서 선택하는 방식<br>
+    </p>
+
+    <div class="div-class" name="name1">div1</div>
+    <div class="div-class" name="name2">div2</div>
+    <div class="div-class" name="name3 name1">div3</div>
+    <div class="class-div" name="name3">div4</div>
+  
+    <pre>
+    * 자손선택자 : >
+    a>b{
+        스타일속성:값;
+    }
+    * 후손선택자 : 공백
+    </pre>
+
+    <div id="test1">
+        <h4>div의 자손이면서 후손입니다.</h4>
+        <h4>div의 자손이면서 후손입니다.</h4>
+
+        <ul>div의 자손이면서 후손입니다.
+            <li>ul의 자손이면서 div의 후손입니다.</li>
+            <li>ul의 자손이면서 div의 후손입니다.</li>
+        </ul>
+    </div>
+
+    <hr>
+
+</body>
+</html>
