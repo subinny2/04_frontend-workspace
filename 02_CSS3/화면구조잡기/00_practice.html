@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조상세</title>
+    <style>
+        div{box-sizing: border-box; border: 1px solid red;}
+        /* 공통속성 */
+        .wrap{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        #header, #footer{
+            height: 20%;
+        }
+        
+        #navigator{
+            height: 5%;
+        }
+
+        #content{
+            height: 55%;
+        }
+
+        /* 공통속성 */
+        #header>div{
+            height: 100%;
+            float: left;
+        }
+
+        #header_1, #content_3{
+            width: 25%;
+        }
+
+        #header_2{
+            width:60%
+        }
+
+        #header_3{
+            width: 15%;
+        }
+
+        /* 공통속성 */
+        #content>div{
+            height: 100%;
+            float: left;
+        }
+
+        #content_1{
+            width: 20%;
+        }
+
+        #content_2{
+            width: 55%;
+        }
+
+        li{
+            float: left;
+            list-style-type: none;
+            padding: 5px;
+          
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            <ul>
+                <li><a href="file:///C:/04_frontend-workspace/02_CSS3/%ED%99%94%EB%A9%B4%EA%B5%AC%EC%A1%B0%EC%9E%A1%EA%B8%B0/01_%EC%98%81%EC%97%AD%EA%B4%80%EB%A0%A8%EC%86%8D%EC%84%B1.html" target="_blank">영역관련속성</a></li>
+                <li><a href="file:///C:/04_frontend-workspace/02_CSS3/%ED%99%94%EB%A9%B4%EA%B5%AC%EC%A1%B0%EC%9E%A1%EA%B8%B0/02_%EC%9B%B9%EB%AC%B8%EC%84%9C%EA%B5%AC%EC%A1%B0.html" target="_blank">웹문서구조</a></li>
+                <li>ddddddddddddd</li>
+                <li>dddddddddddd</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+</body>
+</html>

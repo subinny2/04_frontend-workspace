@@ -23,6 +23,32 @@
         #div1{background-clip: border-box;}
         #div2{background-clip: padding-box;}
         #div3{background-clip: content-box;}
+
+        #test{
+            border: 1px solid black;
+            width: 70%;
+            height: 800px;
+
+            background-image: url("resources/image/bgsample.PNG");
+            background-repeat: repeat; /*기본값*/
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            background-repeat: no-repeat;
+            background-size: auto; /*기본값*/
+            background-size: contain; /*가로획 세로획 맞춰준다.(채우고끝남)*/
+            background-size: cover; /*확대해서 채워준다.*/
+            background-size: 300px 200px;
+            background-size: 50% 50%; /*div의 50% 50%를 채운다.*/
+            background-position: left top; /*기본값*/
+            background-position: right top;
+            background-position: right bottom;
+            background-position: center bottom;
+            background-position: center center;
+            background-position: 50% 50%; /*가운데 정렬 가장 많이 사용*/
+            background-attachment: scroll; /*기본값*/
+            background-attachment: fixed; /*이미지가 고정되어있다. div공간을 벗어나면 잘 안보이고, div공간에 있으면 고정된 자리에 위치*/
+        }
+
     </style>
 </head>
 <body style="background-color: skyblue;">
@@ -46,5 +72,22 @@
     <div class="div-test" id="div1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt suscipit sapiente asperiores fugiat aperiam enim quisquam similique exercitationem unde, rem minima quas tempora laborum quam necessitatibus cumque expedita dolor culpa!</div>
     <div class="div-test" id="div2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem est quo ex laborum reprehenderit earum quis magnam itaque dolorem, sequi sint praesentium facere id expedita numquam accusamus, harum sit sed.</div>
     <div class="div-test" id="div3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati cupiditate rerum, quisquam numquam, quae cumque delectus architecto ipsum ullam, officiis blanditiis assumenda quis? Ratione, labore vitae. Nisi suscipit tempore mollitia!</div>
+
+    <hr>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+    선택자 {
+        background-image:url("이미지 경로") ;
+        background-repeat | repeat-x | repeat-y | no-repeat ;
+        background-size:auto | contain | cover | px px | % % ;
+        background-position:좌/우/가운데 위/아래/가운데 | px px | % % ;
+        background-attachment:scroll | fixed ;
+    }
+    </pre>
+
+    <!-- #test 하면 기본적으로 div -->
+    <div id="test"></div>
+
 </body>
 </html>

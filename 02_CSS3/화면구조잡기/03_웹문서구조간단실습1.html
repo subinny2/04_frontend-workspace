@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조 간단실습1</title>
+    <style>
+        div{box-sizing: border-box; border: 1px solid red;}
+        .wrap{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+
+        /* 공통속성 */
+        .wrap>div{
+            width: 100%;
+        }
+
+        /* 공통속성 */
+        #header, #footer{
+            height: 15%;
+        }
+        
+        #content{
+            height: 70%;
+        }
+
+        /* 공통속성 */
+        #header>div{
+            height: 100%;
+            float: left;
+        }
+
+        #header_1{
+            width: 30%;
+        }
+
+        #header_2{
+            width: 60%;
+        }
+
+        #header_3{
+            width: 10%;
+        }
+
+        /* 공통속성 */
+        #content>div{
+            height: 100%;
+            float: left;
+        }
+
+        #content_1, #content_3{
+            width: 20%;
+        }
+
+        #content_2{
+            width: 60%;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- header3개, content 3개 footer 1개  1000px 800 -->
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+</body>
+</html>
