@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2...</title>
+</head>
+<style>
+    div{box-sizing: border-box; border: 1px solid red;}
+    .wrap { width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+    #header{height: 13%;}
+    #navigator{height: 6%;}
+    #content{height: 61%;}
+    #footer{height: 20%;}
+
+    #header>div{height: 100%; float: left;}
+    #header_1{width: 15%;}
+    #header_2{width: 70%;}
+    #header_3{width: 15%;}
+
+    #header_1>img{height: 99px; width: 145px;}
+
+    #content>div{height: 100%; float:left;}
+    #content_1{width: 70%;}
+    #content_2{width: 30%;}
+    #content_1>div{width: 100%; float: left;}
+    #content_2>div{width: 100%; float: left;}
+   
+    #content1_1{height: 30%;}
+    #content1_2{height: 15%;}
+    #content1_3{height: 55%;}
+    
+    #content1_1>div{width: 50%; height: 100%; float: left;}
+    #content1_2>div{height: 100%; float: left;}
+    #content1_3>div{height: 100%; float: left;}
+
+    #content1_2_left{width: 80%;}
+    #content1_2_right{width: 20%;}
+
+    #content3_left{width: 30%;}
+    #content3_right{width: 70%;}
+    #content3_left>div{height: 50%; width: 100%;}
+    #content3_right>div{height: 50%; width: 100%;}
+
+    #content2_1{height: 30%;}
+    #content2_2{height: 70%;}
+    
+
+
+
+
+    #footer>div{width: 100%;}
+    #footer_1{height: 30%;}
+    #footer_2{height: 70%;}
+
+
+</style>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1">
+                <img src="실습/실습_v2/image/logo.PNG" alt="">
+            </div>
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator"></div>
+        <div id="content">
+            <div id="content_1">
+                <div id="content1_1">
+                    <div id="content1_left"></div>
+                    <div id="content1_right"></div>
+                </div>
+                <div id="content1_2">
+                    <div id="content1_2_left"></div>
+                    <div id="content1_2_right"></div>
+                </div>
+                <div id="content1_3">
+                    <div id="content3_left">
+                        <div id="content3_top_left"></div>
+                        <div id="content3_bottom_left"></div>
+                    </div>
+                    <div id="content3_right">
+                        <div id="content3_top_right"></div>
+                        <div id="content3_bottom_right"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_2">
+                <div id="content2_1"></div>
+                <div id="content2_2"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_1"></div>
+            <div id="footer_2"></div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
