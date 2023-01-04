@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체구조</title>
+    <style>
+        div,form{box-sizing: border-box;}
+        .wrap { width: 1000px;
+                height: 800px;
+                margin: auto;
+              }
+
+        #header>div{height: 100%; float: left;}
+        #content>div{height: 100%; float: left;}
+        #content_2>div{height: 50%;}
+        #content_top>div{height: 100%; width: 50%; float: left;}
+        #content_bottom>div{height: 100%; width: 50%; float: left;}
+        #content_3>div{width: 100%;}
+
+        #header{height: 16%;}
+        #navigator{height: 5%; background-color: rgb(118, 180, 24);}
+        #content{height: 60%;}
+        #footer{height: 16%;}
+
+        #header_1{width: 20%; padding: 60px;}
+        #header_2{width: 60%; padding: 70px;}
+        #header_3{width: 20%;}
+
+        #content_1{width: 15%; box-sizing: border-box;}
+        #content_2{width: 55%;}
+        #content_3{width: 30%;}
+        #content_2 p{text-align: center; margin: 0;}
+        #content_2 img{width: 270px; height: 190px; padding-top: 10px;}
+        #content_1>img{width: 147px; height: 474px; padding-top: 10px;}
+
+        #login_form{width: 100%; height: 20%; padding-top: 10px;}
+        #login_form>*{width: 100%;}
+        #login_input{height: 70%;}
+        #login_etc{height: 30%; text-align: center;}
+
+        #login_input>div{height: 100%; float: left;}
+        #login_form_etc>a{
+            text-decoration: none;
+            color: rgb(82, 79, 79);
+            font-size: 12px;
+            margin: 40px; /*글자와 글자사이 띄우기*/
+            vertical-align: middle;
+        }
+        #login_input_id_pwd{width: 70%;}
+        #login_input_btn{width: 30%;}
+
+        #login_input_id_pwd>input{width: 100%;height: 50%; box-sizing: border-box;}
+        #login_input_btn>input{width: 100%; height: 100%;}
+
+        #navi{list-style-type: none;}
+        #navi>li{
+            float: left;
+            width: 25%;
+            height: 50%;
+            text-align: center;
+        }
+
+        #navi a{text-decoration: none;
+                color: white;
+                font-size: 20px;
+                font-weight: 400;
+
+                width: 100%;
+                height: 100%;
+                display: block;
+                line-height: 35px;
+                }
+        #content3_2{height: 50%;}
+        #content3_2>img{width: 300px; height: 230px; padding-top: 5px; padding-bottom: 5px;}
+
+        #content3_3{height: 30%;}
+        #content3_3>img{width: 290px; height: 140px;}
+       
+        #footer{width: 950px; height: 120px;}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1">
+                <img src="실습/실습_v1/image/logo.jpg"alt="이 사진은 로고입니다.">
+            </div>
+            <div id="header_2">
+                <img src="실습/실습_v1/image/mainlogo.jpg"alt="이사진은 메인로고 입니다.">
+            </div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="content_1">
+                <img src="실습/실습_v1/image/left_img.jpg">
+            </div>
+            <div id="content_2">
+                <div id="content_top">
+                    <div id="content_top_left">
+                        <img src="실습/실습_v1/image/main_img1.jpg" alt="">
+                        <p>나무를 심는 사람들</p>
+                    </div>
+                    <div id="content_top_right">
+                        <img src="실습/실습_v1/image/main_img2.jpg" alt="">
+                        <p>아이들에게 녹색미래를..</p>
+                    </div>
+                </div>
+                <div id="content_bottom">
+                    <div id="content_bottom_left">
+                        <img src="실습/실습_v1/image/main_img3.jpg" alt="">
+                        <p>설악산을 살리는 길</p>
+                    </div>
+                    <div id="content_bottom_right">
+                        <img src="실습/실습_v1/image/main_img4.jpg" alt="">
+                        <p>사라지는 북극곰들</p>
+                    </div>
+                </div>
+            </div>
+            <div id="content_3">
+                <div id="login_form">
+                    <form id="login_input">
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="ID를 입력하세요." required>
+                            <input type="password" name="userPwd" placeholder="PW를 입력하세요." required>
+                        </div>
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+
+                    <div id="login_form_etc">
+                        <a href="#">회원가입</a>  |
+                        <a href="#">ID/PW찾기</a>
+                    </div>
+                </div>
+
+                <div id="content3_2">
+                    <img src="실습/실습_v1/image/right_img.jpg">
+                </div>
+
+                <div id="content3_3">
+                    <img src="실습/실습_v1/image/me_chat.jpg">
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <img src="실습/실습_v1/image/footer.JPG">
+        </div>
+
+    </div>
+
+
+    
+</body>
+</html>

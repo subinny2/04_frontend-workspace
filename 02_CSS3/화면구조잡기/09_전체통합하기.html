@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체통합하기</title>
+    <style>
+        div,form,input{box-sizing: border-box;}
+        /* 공통속성 */
+        .wrap{
+                width: 1000px;
+                height: 800px;
+                margin: auto;
+        }
+        #header, #footer{height: 20%;}
+        
+        #navigator{height: 5%;}
+
+        #content{height: 55%;}
+
+        /* 공통속성 */
+        #header>div{
+            height: 100%;
+            float: left;
+        }
+
+        #header_1, #content_3{width: 25%;}
+        #header_2{width:60%;}
+        #header_3{width: 15%;}
+
+        /* 공통속성 */
+        #content>div{
+            height: 100%;
+            float: left;
+        }
+
+        #content_1{width: 20%;}
+        #content_2{width: 55%;}
+
+        /*푸터바 스타일*/
+        #footer>div{width: 100%;}
+        #footer_1{height: 20%;}
+        #footer_2{height: 80%;}
+
+        #footer_2>p{
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            font-size: 12px;
+            color: rgb(83, 81, 81);
+        }
+
+        #p1{height: 80%; padding: 5px 15px;}
+        #p2{height: 20%; text-align: center;}
+
+        #footer_1>a{
+            text-decoration: none; /*밑줄사라짐*/
+            color: rgb(83, 81, 81);
+            font-weight: 600;
+            margin: 15px;
+            vertical-align: middle; /*수직정렬 중에 가운데 .. 이거 가끔 안되는 태그들 존재*/
+        }
+
+        /* 로그인폼 스타일 */
+        #login_form{width: 100%; height: 20%;}
+        #login_form>*{width: 100%;}
+        #login_form_input{height: 70%;}
+        #login_form_etc{height: 30%; text-align: center;}
+        
+        #login_form_input>div{height: 100%; float: left;}
+        #login_input_id_pwd{width: 65%;}
+        #login_input_btn{width: 35%;}
+
+        #login_form_etc>a{
+            text-decoration: none;
+            color: rgb(82, 79, 79);
+            font-size: 12px;
+            margin: 10px; /*글자와 글자사이 띄우기*/
+            vertical-align: middle;
+        }
+
+        #login_input_id_pwd>input{width: 100%;height: 50%; box-sizing: border-box;}
+        #login_input_btn>input{width: 100%; height: 100%;}
+
+
+        /* 검색창 스타일 */
+        #header_2{position: relative;}
+
+        #search_form{
+            width: 80%;
+            height: 20%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; /*네개가 다 극단으로 가려고해서 결국 가운데 배치*/
+        }
+
+        #search_form>div{height: 100%; float: left;}  /*div는 기본적으로 개행이 되어지기때문에 왼쪽정렬을 해주어야한다.*/
+
+        #search_text{width: 80%;}
+        #search_btn{width: 20%;}
+
+        /* 후손 선택자(공백) */
+        #search_form input{width: 100%; height: 100%;}
+
+
+        /* 메뉴바 스타일 */
+        #navi{
+            list-style-type: none;
+            padding: 0; /*들여쓰기 해제*/
+            margin: 0;  /*들여쓰기 해제*/
+            height: 100%;
+        }
+
+        #navi>li{
+            float: left;
+            width: 15%;
+            height: 100%;
+            text-align: center;
+        }
+
+        #navi a{
+            text-decoration: none;
+            color: orange;
+            font-size: 18px;
+            font-weight: 900;
+
+            /* 메뉴바에 가까워졌을때 스타일 부여 */
+            width: 100%;
+            height: 100%; /* 여기까지 해도 안됨.. 왜 => 인라인이기때문에 */
+            display: block; /* 인라인요소(content만 갖는)이기때문에 블럭요소로 변경해야한다. => width, height 적용됨 */
+            /* vertical-align: middle; 블럭일때는 안됨 */
+            line-height: 35px;
+            transform: scale(1);
+        }
+
+        #navi a:hover{
+            color: orangered;
+        }
+
+        #navi>li>ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;  /*일단은 안보여지게함*/
+        }
+
+        #navi>li>ul a{font-size: 15px;}
+
+        #navi>li>a:hover+ul{display: block;}
+        #navi>li>ul:hover{display: block;}
+
+       
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2">
+                <form action="" id="search_form">
+
+                    <div id="search_text">
+                        <input type="text" name="keyword">
+                    </div>
+                    <div id="search_btn">
+                        <input type="submit" value="검색">
+                    </div>
+
+                </form>
+            </div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Oracle</a></li>
+                <li><a href="#">Front-End</a>
+                    <ul> <!-- a와 형제관계 부모관계가 아니다.-->
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">jQuery</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Server</a>
+                    <ul>
+                        <li><a href="#">JDBC</a></li>
+                        <li><a href="#">Servlet</a></li>
+                        <li><a href="#">JSP</a></li>
+                        <li><a href="#">AJAX</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Framework</a>
+                    <ul>
+                        <li><a href="#">myBatis</a></li>
+                        <li><a href="#">Spring</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3">
+                <!-- 1. 로그인 폼 전체 감싸는 div -->
+                <div id="login_form">
+
+                    <!-- 2_1. 입력받아 요청할 수 있는 form -->
+                    <form action="" id="login_form_input">
+                        <!-- 3_1. ID/PWD 텍스트 상자가 들어갈 div -->
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="아이디를 입력해주세요" required>
+                            <input type="password" name="userPwd" placeholder="비밀번호를 입력해주세요" required>
+
+                        </div>
+
+                        <!-- 3_2. 로그인 버튼이 들어갈 div -->
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+
+                    </form>
+
+                    <!-- 2_2. 회원가입, ID/PWD 찾기 링크 영역 -->
+                    <div id="login_form_etc">
+                        <a href="#">회원가입</a>  |
+                        <a href="#">ID/PWD 찾기</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_1">
+                <a href="#">이용약관</a> |
+                <a href="#">개인정보취급방침</a> | 
+                <a href="#">인재채용</a>  |
+                <a href="#">고객센터</a>
+            </div>
+            <div id="footer_2">
+                <p id="p1">
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로지원 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F <br>
+                    당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F, 20F <br>
+                </p>
+                <p id="p2">
+                    Copyright © 1998-2023 KH Information Educational Institute All Right Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
