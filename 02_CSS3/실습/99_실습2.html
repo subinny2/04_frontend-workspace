@@ -7,13 +7,13 @@
     <title>실습2...</title>
 </head>
 <style>
-    div{box-sizing: border-box; border: 1px solid red;}
+    div,form{box-sizing: border-box; }
     .wrap { width: 1000px;
             height: 800px;
             margin: auto;
         }
-    #header{height: 13%;}
-    #navigator{height: 6%;}
+    #header{height: 13%; border: 2px solid rgb(185, 184, 184); padding-top: 10px; margin-bottom: 10px;}
+    #navigator{height: 6%; border: 2px solid rgb(185, 184, 184); margin-bottom: 10px;}
     #content{height: 61%;}
     #footer{height: 20%;}
 
@@ -22,7 +22,7 @@
     #header_2{width: 70%;}
     #header_3{width: 15%;}
 
-    #header_1>img{height: 99px; width: 145px;}
+    #header_1>img{height: 80px; width: 140px;}
 
     #content>div{height: 100%; float:left;}
     #content_1{width: 70%;}
@@ -30,32 +30,106 @@
     #content_1>div{width: 100%; float: left;}
     #content_2>div{width: 100%; float: left;}
    
-    #content1_1{height: 30%;}
-    #content1_2{height: 15%;}
-    #content1_3{height: 55%;}
+    #content1_1{height: 30%;border: 2px solid rgb(185, 184, 184); margin-bottom: 10px;}
+    #content1_2{height: 10%;border: 2px solid rgb(185, 184, 184);}
+    #content1_3{height: 60%;}
     
-    #content1_1>div{width: 50%; height: 100%; float: left;}
     #content1_2>div{height: 100%; float: left;}
     #content1_3>div{height: 100%; float: left;}
 
     #content1_2_left{width: 80%;}
     #content1_2_right{width: 20%;}
 
-    #content3_left{width: 30%;}
-    #content3_right{width: 70%;}
-    #content3_left>div{height: 50%; width: 100%;}
-    #content3_right>div{height: 50%; width: 100%;}
-
     #content2_1{height: 30%;}
     #content2_2{height: 70%;}
+    #content2_2>img{width: 295px; height: 335px;}
+    #content1_1>img{width: 693px; height: 125px; padding-top: 10px;}
+    #content1_3>img{width: 693px;height: 260px; padding-top: 10px;}
+    #content1_2 p2{text-align: center; margin: 0;}
+    
+    #footer>div{width: 100%;}
+    #footer_1{height: 15%;}
+    #footer_2{height: 85%;}
+
+    #footer_1>a{
+        text-decoration: none;
+        color: rgb(58, 57, 57);
+        margin: 15px;
+        vertical-align: middle;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    #p1{height: 50%; padding: 5px 15px;}
+    #p2{text-align: center;}
+
+    #navi{
+        list-style-type: none;
+        height: 100%;
+        padding: 0; /*들여쓰기 해제*/
+        margin: 0; 
+        vertical-align: middle;
+    }
+
+    #navi>li{
+            float: left;
+            width: 20%;
+            text-align: center;
+    }
+    #navi a{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 800;
+        color: rgb(58, 57, 57);
+        display: block; /* 인라인요소(content만 갖는)이기때문에 블럭요소로 변경해야한다. => width, height 적용됨 */
+            /* vertical-align: middle; 블럭일때는 안됨 */
+        line-height: 40px;
+    }
+
+    #login_input_btn{width: 30%}
+    #login_input_id_pwd{width: 70%;}
+
+    #login_form>div{height: 100%; float: left; padding-top: 10px;}
+    #login_form{height: 70%;}
+    #login_form_etc{height: 30%;}
+    #login_form input{width: 100%;}
+    #login_form_etc>a{
+        text-decoration: none;
+        color:rgb(58, 57, 57);
+        margin: 16px;
+        font-size: 13px;
+    }
+    #login_input_id_pwd>input{width: 100%;height: 50%; box-sizing: border-box;}
+    #login_input_btn>input{width: 100%; height: 100%;}
+
+    #header_2{position: relative;}
+    #search_form{
+                    width: 80%;
+                    height: 40%;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0; /*네개가 다 극단으로 가려고해서 결국 가운데 배치*/
+        }
+
+        #search_form>div{height: 100%; float: left;}  /*div는 기본적으로 개행이 되어지기때문에 왼쪽정렬을 해주어야한다.*/
+
+        #search_text{width: 80%;}
+        #search_btn{width: 20%;}
+
+        #search_text>input{height: 75%;}
+        #search_btn>btn{height: 80%;}
+        #search_btn img{width: 80px; height: 24px;}
+
+        /* 후손 선택자(공백) */
+        #search_form input{width: 98%;}
+
+
+
     
 
-
-
-
-    #footer>div{width: 100%;}
-    #footer_1{height: 30%;}
-    #footer_2{height: 70%;}
 
 
 </style>
@@ -65,39 +139,86 @@
             <div id="header_1">
                 <img src="실습/실습_v2/image/logo.PNG" alt="">
             </div>
-            <div id="header_2"></div>
+            <div id="header_2">
+                <form id="search_form">
+                    <div id="search_text">
+                        <input type="text" name="keyword">
+                    </div>
+                    <div id="search_btn">
+                        <button><img src="실습/실습_v2/image/search.png" alt=""></button>
+                    </div>
+        
+                </form>
+            </div>
             <div id="header_3"></div>
         </div>
-        <div id="navigator"></div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">교육과정</a></li>
+                <li><a href="#">교육원소개</a></li>
+                <li><a href="#">취업지원센터</a></li>
+                <li><a href="#">신학연계</a></li>
+                <li><a href="#">상담센터</a></li>
+            </ul>
+        </div>
         <div id="content">
             <div id="content_1">
                 <div id="content1_1">
-                    <div id="content1_left"></div>
-                    <div id="content1_right"></div>
+                   <img src="실습/실습_v2/image/banner.PNG">
                 </div>
                 <div id="content1_2">
-                    <div id="content1_2_left"></div>
-                    <div id="content1_2_right"></div>
+                    <div id="content1_2_left">
+                        <p> &nbsp; &nbsp; 안녕하세요 여기는 공지사항 제목이 들어오는 자리입니다.</p>
+                    </div>
+                    <div id="content1_2_right">
+                        <p id="p2">경제 연예 사회</p>
+                    </div>
                 </div>
                 <div id="content1_3">
-                    <div id="content3_left">
-                        <div id="content3_top_left"></div>
-                        <div id="content3_bottom_left"></div>
-                    </div>
-                    <div id="content3_right">
-                        <div id="content3_top_right"></div>
-                        <div id="content3_bottom_right"></div>
-                    </div>
+                    <img src="실습/실습_v2/image/car.PNG">
                 </div>
             </div>
             <div id="content_2">
-                <div id="content2_1"></div>
-                <div id="content2_2"></div>
+                <div id="content2_1">
+                    <form id="login_form">
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="ID를 입력하세요." required>
+                            <input type="password" name="userPwd" placeholder="PWD를 입력하세요." required>
+                        </div>
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+
+                    </form>
+                    <div id="login_form_etc">
+                        <a href="#">아이디</a>|
+                        <a href="#">비밀번호찾기</a>|
+                        <a href="#">회원가입</a>
+                    </div>
+                </div>
+                <div id="content2_2">
+                    <img src="실습/실습_v2/image/shopping.PNG">
+                </div>
+
             </div>
         </div>
         <div id="footer">
-            <div id="footer_1"></div>
-            <div id="footer_2"></div>
+            <div id="footer_1">
+                <a href="#">이용약관</a> |
+                <a href="#">개인정보취급방침</a> |
+                <a href="#">인재채용</a> |
+                <a href="#">고객센터</a>
+            </div>
+            <div id="footer_2">
+                <p id="p1">
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                </p>
+                <p id="p2">
+                    Copyright © 1998-2023 KH Information Educational Institute All Right Reserved
+                </p>
+            </div>
         </div>
 
     </div>
