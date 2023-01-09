@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오문제_시험</title>
+</head>
+<style>
+    #btn_submit{
+        padding-left: 110px;
+    }
+
+    thead, tfoot{
+        background-color: rgba(248, 162, 105, 0.973);
+        color: white;
+        font-size: 15px;
+    }
+
+    #tt{
+        background-color: beige;
+        font-size: 13px;
+    }
+
+
+
+</style>
+
+<body>
+    <h1>포트폴리오 문제</h1>
+    <p>설명 : '*'이 붙은 문구 및 현재 작성된 이 문구는 화면구현시 구현을 안해도 됩니다. 설명을 위해 작성한 구문입니다.</p>
+    <hr>
+    <br>
+
+    <form action="insert.no" method="post">
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+
+        <table>
+            <tr>
+                <th>제목</th>
+                <td>
+                    <input type="text" name="title" style="width: 225px;" placeholder="제목을 입력하시오." required>
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    <textarea name="content" cols="30" rows="10" placeholder="내용을 입력하시오." required style="resize: none;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>첨부파일</th>
+                <td><input type="file" name="uploadFile"></td>
+            </tr>
+            
+            
+        </table>
+        <br>
+            <div id="btn_submit">
+                <button type="submit" id="btn1">작성하기</button>
+            </div>
+        
+    </fieldset>
+</form>
+
+<br><hr><br>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th height="35">번호</th>
+            <th colspan="2" width="500">제목</th>
+            <th width="120">작성자</th>
+            <th width="120">작성일</th>
+            <th>조회수</th>
+        </tr>
+    </thead>
+
+    <tbody id="tt">
+        <tr>
+            <td>9</td>
+            <td width="450">공지사항 제목 9</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>공지사항 제목 6</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>공지사항 제목 3</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>공지사항 제목 2</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>공지사항 제목 1</td>
+            <td><input type="submit" value="바로가기"></td>
+            <td>xml23</td>
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th colspan="4" width="500px">전체공지사항 갯수</th>
+            <th colspan="2">5개</th>
+        </tr>
+    </tfoot>
+    
+</table>
+
+    
+</body>
+</html>

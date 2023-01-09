@@ -30,21 +30,17 @@
     <script>
         function output(){
 
+            var output = document.getElementById("output");
             var consumer = document.getElementsByTagName("input");
-            var product_name = document.getElementById("product_name");
+            var list = document.getElementById("product_name");
             var price = document.getElementsByName("price");
 
 
 
-            구매자 : output.innerHTML += consumer[0].value + "<br>" ;
-            output.innerHTML += product_name.value + "<br>" ;
-            output.innerHTML += price[0].value;
-           
+            output.innerHTML += "구매자: " + consumer[0].value + "<br>" ;
+            output.innerHTML += "구입상품 : " + list.value + "<br>" ;
+            output.innerHTML += "구매가격 : " + price[0].value;
 
-
-
-
-            console.dir(consumer);
         }
 
 

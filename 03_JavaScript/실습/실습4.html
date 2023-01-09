@@ -54,14 +54,18 @@
         function list_output() {
             const str = "콜라,사이다,햄버거,피자,한약"
             const food = str.split(",");
-
-            area2.innerHTML += "1." + food[0] + "<br>";
-            area2.innerHTML += "2." + food[1] + "<br>";
-            area2.innerHTML += "3." + food[2] + "<br>";
-            area2.innerHTML += "4." + food[3] + "<br>";
-            area2.innerHTML += "5." + food[4] + "<br>";
+            for(var i=0; i<food.length; i++){
+            //     area2.innerHTML += "<ol start=>" + 
+            //         "<li>" + 
+            //              food[i] +  "<br>" +
+            //         "</li>" + 
+            //     "</ol>" ;
+            area2.innerHTML += (i+1) + "." + food[i] + "<br>";
         }
+    }
     </script>
+
+    
 
 </body>
 </html>
