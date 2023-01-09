@@ -15,7 +15,7 @@
     #header{height: 13%; border: 2px solid rgb(185, 184, 184); padding-top: 10px; margin-bottom: 10px;}
     #navigator{height: 6%; border: 2px solid rgb(185, 184, 184); margin-bottom: 10px;}
     #content{height: 61%;}
-    #footer{height: 20%;}
+    #footer{height: 20%; border: 2px solid rgb(185, 184, 184);}
 
     #header>div{height: 100%; float: left;}
     #header_1{width: 15%;}
@@ -25,27 +25,27 @@
     #header_1>img{height: 80px; width: 140px;}
 
     #content>div{height: 100%; float:left;}
-    #content_1{width: 70%;}
-    #content_2{width: 30%;}
+    #content_1{width: 65%;}
+    #content_2{width: 34%;}
     #content_1>div{width: 100%; float: left;}
     #content_2>div{width: 100%; float: left;}
    
-    #content1_1{height: 30%;border: 2px solid rgb(185, 184, 184); margin-bottom: 10px;}
-    #content1_2{height: 10%;border: 2px solid rgb(185, 184, 184);}
-    #content1_3{height: 60%;}
+    #content1_1{height: 28%;border: 2px solid rgb(185, 184, 184); margin-bottom: 10px;}
+    #content1_2{height: 8%;border: 2px solid rgb(185, 184, 184);margin-bottom: 10px;}
+    #content1_3{height: 55%;border: 2px solid rgb(185, 184, 184);}
     
     #content1_2>div{height: 100%; float: left;}
     #content1_3>div{height: 100%; float: left;}
 
-    #content1_2_left{width: 80%;}
-    #content1_2_right{width: 20%;}
+    #content1_2_left{width: 70%;}
+    #content1_2_right{width: 30%;}
 
-    #content2_1{height: 30%;}
-    #content2_2{height: 70%;}
-    #content2_2>img{width: 295px; height: 335px;}
-    #content1_1>img{width: 693px; height: 125px; padding-top: 10px;}
-    #content1_3>img{width: 693px;height: 260px; padding-top: 10px;}
-    #content1_2 p2{text-align: center; margin: 0;}
+
+    #content2_1{height: 28%; border: 2px solid rgb(185, 184, 184); margin-left: 10px;}
+    #content2_2{height: 65%; border: 2px solid rgb(185, 184, 184); margin:10px;}
+    #content2_2>img{width: 335px; height: 310px; }
+    #content1_1>img{width: 643px; height: 128px; }
+    #content1_3>img{width: 643px;height: 260px;}
     
     #footer>div{width: 100%;}
     #footer_1{height: 15%;}
@@ -60,8 +60,12 @@
         font-weight: 700;
     }
 
-    #p1{height: 50%; padding: 5px 15px;}
-    #p2{text-align: center;}
+    #footer_p1{height: 50%; padding: 5px 15px;}
+    #footer_p2{text-align: center;}
+    #p1{height: 50%; margin: 0; margin-top: 8px; margin-left: 4px;}
+    #p2{text-align: center; line-height: 12px; margin-top: 12px;}
+    
+
 
     #navi{
         list-style-type: none;
@@ -89,7 +93,7 @@
     #login_input_btn{width: 30%}
     #login_input_id_pwd{width: 70%;}
 
-    #login_form>div{height: 100%; float: left; padding-top: 10px;}
+    #login_form>div{height: 100%; float: left;}
     #login_form{height: 70%;}
     #login_form_etc{height: 30%;}
     #login_form input{width: 100%;}
@@ -100,7 +104,7 @@
         font-size: 13px;
     }
     #login_input_id_pwd>input{width: 100%;height: 50%; box-sizing: border-box;}
-    #login_input_btn>input{width: 100%; height: 100%;}
+    #login_input_btn>input{width: 100%; height: 100%; }
 
     #header_2{position: relative;}
     #search_form{
@@ -128,10 +132,6 @@
 
 
 
-    
-
-
-
 </style>
 <body>
     <div class="wrap">
@@ -145,7 +145,7 @@
                         <input type="text" name="keyword">
                     </div>
                     <div id="search_btn">
-                        <button><img src="실습/실습_v2/image/search.png" alt=""></button>
+                        <button type="submit"><img src="실습/실습_v2/image/search.png" alt=""></button>
                     </div>
         
                 </form>
@@ -168,7 +168,7 @@
                 </div>
                 <div id="content1_2">
                     <div id="content1_2_left">
-                        <p> &nbsp; &nbsp; 안녕하세요 여기는 공지사항 제목이 들어오는 자리입니다.</p>
+                        <p id="p1"> 안녕하세요 여기는 공지사항 제목이 들어오는 자리입니다.</p>
                     </div>
                     <div id="content1_2_right">
                         <p id="p2">경제 연예 사회</p>
@@ -210,12 +210,12 @@
                 <a href="#">고객센터</a>
             </div>
             <div id="footer_2">
-                <p id="p1">
+                <p id="footer_p1">
                     강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
                     강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
                     강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
                 </p>
-                <p id="p2">
+                <p id="footer_p2">
                     Copyright © 1998-2023 KH Information Educational Institute All Right Reserved
                 </p>
             </div>
