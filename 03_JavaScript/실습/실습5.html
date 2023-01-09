@@ -21,58 +21,64 @@
     <br>
     <div id="result">결과없음</div>
     <script>
-    // switch (onclick) {
-    //     case plus(): 
-    //         break;
+
+    switch (onclick) {
+
+        case plus(): 
         
-    //     case minor():
-    //          break;
+            break;
+        
+        case minor():
+             break;
 
-    //     case multiple():
-    //         break;
+        case multiple():
+            break;
 
-    //     case division():
-    //         break;
+        case division():
+            break;
 
-    //     case remainer():
-    //         break;
-    // }
+        case remainer():
+            break;
+    }
 
 
         function plus() {
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
-            const sum = Number("num1") + Number("num2"); // 여기서 이상한듯.
+            // const sum = Number("num1") + Number("num2"); // 여기서 이상한듯.
+            const sum = Number(num1) + Number(num2);
             document.getElementById("result").innerHTML = "계산결과 : " + sum;
-            console.log(num1);
+            // result.innerHTML = sum + "," + typeof(sum) + "<br>";
+            
             console.dir(num1);
         }
 
         function minor() {
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
-            const minor = Number("num1")-Number("num2");
+            const minor = Number(num1)-Number(num2);
             document.getElementById("result").innerHTML = "계산결과 : " + minor;
         }
 
         function multiple(){
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
-            const multiple = Number("num1")*Number("num2");
-            document.getElementById("result").innerHTML = "계산결과 : " + multiple;
+            const multiple = (Number(num1))*(Number(num2));
+            result.innerHTML = "계산결과 : " + multiple;
+        
         }
         
         function division() {
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
-            const division = Number("num1")/Number("num2");
+            const division = Number(num1)/Number(num2);
             document.getElementById("result").innerHTML = "계산결과 : " + division;
         }
 
         function remainer() {
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
-            const remainer = Number("num1")%Number("num2");
+            const remainer = Number(num1)%Number(num2);
             document.getElementById("result").innerHTML = "계산결과 : " + remainer;
         }
     
