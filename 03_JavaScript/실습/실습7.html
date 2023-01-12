@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습7</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제2</h1>
+    <p>
+    다음 보기에 있는 문자열을 가지고 정답과 같이 만드세요. (별도의 문자열을 쓰면 안됨) <br>
+    그리고 출력 부분에 출력하도록 하면 됩니다. 정답 : "brlove"
+    </p>
+    <fieldset>
+        <legend>보기</legend>
+        <label id="stringla1">r b</label> <br>
+        <label id="stringla2">e v o l</label> <br>
+    </fieldset>
+
+    <div id="area1" class="area"></div>
+    <button onclick="test1();">처리</button>
+
+    <script>
+        function test1() {
+            const area1 = document.getElementById("area1");
+            const rb = document.getElementById("stringla1").innerHTML.split(" ");
+            const evol = document.getElementById("stringla2").innerHTML.split(" ");
+            const arr = (rb.reverse()).concat(evol.reverse());
+            
+            area1.innerHTML += arr.join("");
+        }
+    </script>
+</body>
+</html>
