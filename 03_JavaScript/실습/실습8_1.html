@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습8 (선생님이랑 같이)</title>
+    <style>
+    #answer{
+        border: 1px solid red;
+        width: 900px;
+        height: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제3</h1>
+
+    <fieldset>
+        <legend>입력</legend>
+        <input type="text" id="input1">
+        <button onclick="test();">입력</button>
+    </fieldset>
+
+    <div id="answer">이 부분에 정답이 출력 될 수 있도록 하세요.</div>
+
+    <script>
+        let arr = [];
+        
+
+        function test() {
+            let input1 = document.getElementById("input1").value;
+            let answer = document.getElementById("answer");
+
+            arr.push(input1);
+            input1 = "";
+
+            console.log(arr);
+
+            answer.innerHTML = arr.toString();
+
+        }
+    </script>
+</body>
+</html>
