@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_이벤트</title>
+    <style>
+        .area{
+            background-color: lightgray;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트(Event)</h1>
+
+    <h2>1. 이벤트 모델 종류</h2>
+    <h3>* 고전 이벤트 모델 (기본 이벤트 모델)</h3>
+    <p>
+        특정 요소 객체를 가지고 와서 해당 요소의 이벤트 속성에 접근한 후  <br>
+        이벤트 핸들러를 연결하는 방식 <br>
+        이벤트를 제거할 수 도 있음.
+    </p>
+
+    <button id="btn1">실행확인</button>
+    <button id="btn2">실행확인</button>
+
+    <div id="area1" class="area"></div>
+
+    <script>
+        const area1 = document.getElementById("area1");
+
+        /*
+        const btn1 = document.getElementById("btn1");
+        btn1.onclick = function() { // 이벤트 핸들러
+
+        }
+        */
+
+        document.getElementById("btn1").onclick = function() {
+            area1.innerHTML += "btn1이 클릭되었습니다. <br>";
+        }
+
+        document.getElementById("btn2").onclick = function() {
+            // area1.innerHTML += "btn2이 클릭되었습니다. <br>";
+            area1.innerHTML += "btn2가 클릭되면서 btn1 이벤트가 제거됨. <br>"
+            document.getElementById("btn1").onclick = null; // 이벤트 제거됨
+        }
+    </script>
+
+    <br>
+    
+    <h3>* 인라인 이벤트 모델</h3> <!-- 우리가 맨날 하는거 -->
+    <p>
+        요소내부에 직접적으로 이벤트 속성 제시해서 실행할 내용을 정의하는 방식 <br>
+        주로 script 태그 내에 정의되어있는 함수 호출하는 방식을 선호
+    </p>
+
+    <button onclick="test1();">실행확인</button>
+    <button onclick="document.getElementById('area2').innerHTML += '두번째 버튼 클릭';">실행확인</button>
+
+    <div id="area2" class="area"></div>
+
+    <script>
+        function test1() {
+            document.getElementById("area2").innerHTML += "첫번째 버튼 클릭 <br>";
+        }
+    </script>
+
+    <br>
+
+    <h3>* 표준 이벤트 모델 (addEventListener) </h3>
+    <p>
+        w3c에서 공식적으로 지정한 이벤트 모델 <br>
+        IE 9 버전부터 지원
+    </p>
+
+    <!-- 요소내부에 직접적으로 이벤트 속성 기술 X -->
+    <button id="btn3">실행확인</button>
+
+    <script>
+        const btn3 = document.getElementById("btn3");
+        
+        // 이벤트를 걸고자하는 요소객체.addEventListener("이벤트명", 이벤트핸들러);
+        // 이벤트명 => click (on을 뺀거)
+
+        btn3.addEventListener("click", function() {
+            alert("표준이벤트 모델 테스트");
+
+        });
+
+        btn3.addEventListener("mouseenter", function(){
+            btn3.style.backgroundColor = "red";
+        });
+
+        btn3.addEventListener("mouseout", function(){
+            btn3.style.backgroundColor = "yellow";
+        });
+
+        // 이거 2개 결합되면 hover
+    </script>
+
+<br>
+
+<h2>2. 현재 이벤트가 발생한 해당 요소객체에 접근하는 방법</h2>
+
+<button id="btn4">고전이벤트방식</button>
+<button id="btn5">표준이벤트방식</button>
+<button onclick="test2();">인라인이벤트방식</button>
+
+<button onclick="test3(this);">인라인이벤트방식2</button> <!-- this로 넘겨줘야한다. -->
+
+<script>
+    // 고전 이벤트 방식     // 버튼요소를 선택한다음에 이벤트를 선택 (이벤트핸들러 방식)
+    document.getElementById("btn4").onclick = function(e){
+        console.log(e); // 매개변수로 받으면 정보를 알수있음.
+        console.log(window.event);
+
+        // 현재 이벤트가 발생한 요소객체에 접근하고자 한다면
+        console.log(e.target); // 버튼선택
+        console.log(window.event.target);
+
+        console.log(this); // this = window.event.target
+
+        e.target.innerHTML = "버튼클릭됨"; // 태그와 태그사이이므로 innerHTML은 버튼안에 쓸수있는 글자이다.
+        window.event.target.style.backgroundColor = "red";
+        this.style.color = "white";
+    }
+
+    // 표준이벤트 방식
+    document.getElementById("btn5").addEventListener("click", function(e){
+        console.log(e.target); // <button id="btn5">표준이벤트방식</button> 
+        console.log(window.event); // e와같음
+        console.log(window.event.target); // e.target과 같음
+        console.log(this);
+    });
+
+
+    // 인라인 이벤트 방식
+    // function test2(e) {
+    //     console.log(e); // 함수안에 매개변수를 넣고 콘솔을 찍으면, undefined
+    // onclick = test2() 함수 만들때 매개변수를 안넣었기 때문. (전달받은 e가 아무것도 없기때문에 undefined)
+    // }
+
+
+        // 인라인은 함수를 호출하기때문에 e가 아닌 window.event.target으로 정보를 얻을수있음
+    function test2(e) {
+        // console.log(e); 넘겨받은 이벤트 없기 때문에 undefined
+        console.log(window.event.target);
+        window.event.target.innerHTML = "버튼변경";
+        // 버튼안에 문구가 버튼변경으로 변경된다. (동적으로 버튼을 변경한다.)
+    }
+
+    // this를 전달하기때문에 매개변수 아무거나 써도됨. 요소의 정보를 전달해주고 있음.
+    function test3(el){
+        el.style.backgroundColor = "red";
+    }
+</script>
+
+<hr>
+
+<h2>3. 태그별로 기본적으로 가지고 있는 이벤트 제거</h2>
+
+<p>
+    기본적으로 이벤트를 가지고 있는 요소 <br>
+    - a태그 : 클릭시 href에 제시되어있는 url로 요청하는 기본이벤트 보유
+    - form내의 submit 버튼 : 클릭시 사용자가 입력한 값들을 action에 제시되어있는 url로 제출하면서 요청하는 기본이벤트 보유
+    <br><br>
+
+    태그내에 기본적으로 설정되어있는 이벤트가 실행안되게끔 막고싶음 <br>
+    => 이벤트 핸들러의 return 값을 false로 하면 기본이벤트 실행안됨
+</p>
+
+<!-- 기본이벤트가 있는 요소에 다시 또 이벤트 속성을 부여하면 그 코드가 먼저 실행됨(내가 준 이벤트 우선권 갖음) -->
+<a href="http://www.naver.com" onclick="alert('ㅋㅋㅋ'); return false;">네이버로 이동</a>
+<!-- return false는 기본이벤트인 a href속성에 영향을 끼쳐서 alert 실행후 a 태그 실행하지 않는다. -->
+<br>
+
+<a href="http://www.google.com" onclick="return test4();">구글로 이동</a> 
+<script>
+    function test4() {
+        alert("ㅎㅎㅎ");
+        return false; 
+    }
+    // 기본이벤트를 향해서 return false가 안됨. => return을 써줘야함.
+</script>
+
+
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
