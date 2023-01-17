@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식을 활용한 회원가입 폼</title>
+    <style>
+        .area{
+            border: 1px solid lightgray;
+            width: 800px;
+            height: 600px;
+            padding: 10px;
+        }
+
+        p{
+            color: rgb(138, 137, 137);
+            font-size: 14px;
+            padding-left: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>< 정규표현식을 활용한 회원가입 폼 ></h1>
+<form action="">
+    <fieldset>
+    * 아이디 : 
+    <input type="text" id="userId" minlength="4" maxlength="12" required>
+    <p>첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.</p><br>
+
+    * 비밀번호 : 
+    <input type="password" id="userPwd1" minlength="8" maxlength="15" required>
+    <p>영문자,숫자,특수문자 포함하여 8자~15자로 입력하시오.</p><br>
+
+    * 비밀번호 확인 : 
+    <input type="password" id="checkPwd2">
+    <p>위의 비밀번호와 일치하게 입력하시오.</p><br>
+
+    * 이름 : 
+    <input type="text" id="userName" minlength="2" required>
+    <p>한글로만 이루어져야되며 2글자 이상으로 입력하시오.</p><br>
+
+    * 이메일:
+    <input type="email" >
+    <p>이메일 형식에 맞춰서 입력하시오.</p><br>
+
+    * 취미 : 
+    <input type="text" id="hobby" name="hobby" list= "hobbylist" placeholder="축구,농구,야구,독서, 등"> <br><br>
+    <!-- <input type="hidden" id="hobby"> -->
+    <datalist id="hobbylist">
+        <option value="축구">축구</option>
+        <option value="농구">농구</option>
+        <option value="야구">야구</option>
+        <option value="독서">독서</option>
+    </datalist>
+
+    * 거주지 :
+    <select name="address" id="address">
+        <option value="seoul">서울</option>
+        <option value="incheon">인천</option>
+        <option value="busan">부산</option>
+    </select> <br><br>
+
+    <button type="submit">회원가입</button>
+    <button type="reset">취소</button>
+
+</fieldset>
+</form>
+
+    
+</body>
+</html>

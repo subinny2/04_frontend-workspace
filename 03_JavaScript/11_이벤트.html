@@ -185,7 +185,50 @@
         return false; 
     }
     // 기본이벤트를 향해서 return false가 안됨. => return을 써줘야함.
-</script>
+</script> <br><br>
+
+<form action="test.do" method="get">
+    아이디 :
+    <input type="text" name="userId" id="userId"><br>
+    비밀번호 : 
+    <input type="password" name="userPwd" id="userPwd"><br>
+    비밀번호 확인 : <!--서버에는 안넘겨도 됨 앞단에서 확인만하면됨. name필요없음-->
+    <input type="password" id="checkPwd"><br><br>
+
+    <input type="submit" onclick="return validate();"> <!-- validate() : 검증, input보다 validate()를 먼저수행-->
+    <!-- 기본이벤트 수행하기 전에 비번, 비번확인 맞는건지 확인 후 전송 -->
+</form>
+
+    <script>
+        function validate() {
+            const userPwd = document.getElementById("userPwd").value;
+            const checkPwd = document.getElementById("checkPwd").value;
+            const userId = document.getElementById("userId").value;
+
+            // 아이디에 대한 유효성 검사
+            // 영문자 또는 숫자로만 5글자 이상 12글자 이하가 맞는지 (DB설계에 따라서 변경가능)
+            // 맞지 않을 경우
+            // 알람창 출력 => 제출 불가하게끔 기본 이벤트 막기
+
+            // 정규표현식
+            const regExp = /^[a-zA-Z0-9]{5,12}$/;
+
+            if(!regExp.test(userId)){
+                alert("유효한 아이디의 형식이 아닙니다. 다시 입력해주세요.");
+
+                document.getElementById("userId").select(); // .select() 알람창이 뜬후 ID input에 커서올려줌
+                return false;
+            }
+
+            // 두 개의 비밀번호가 일치하지 않을 경우
+            // 알람창 출력 => 제출 불가하게끔 기본이벤트 막기
+            if(userPwd != checkPwd){ // 유효성 검증 (Id다음으로 PWD검증을 한다.)
+                alert("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+
+        }
+    </script>
 
 
     
