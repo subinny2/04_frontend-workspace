@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식을 활용한 회원가입 폼</title>
+    <style>
+        .area{
+            border: 1px solid lightgray;
+            width: 800px;
+            height: 600px;
+            padding: 10px;
+        }
+
+        p{
+            color: rgb(138, 137, 137);
+            font-size: 13px;
+            padding-left: 10px;
+            }       /* label태그로 해도된다. */
+    </style>
+</head>
+<body>
+    <h1>< 정규표현식을 활용한 회원가입 폼 ></h1>
+    <form action="insert.me" method="get">      <!-- me : member의 약자-->
+    <div id="area1" class="area">
+    
+    * 아이디 : 
+    <input type="text" id="userId" required>
+    <p>첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.</p><br>
+
+    * 비밀번호 : 
+    <input type="password" id="userPwd1" required>
+    <p>영문자,숫자,특수문자 포함하여 8자~15자로 입력하시오.</p><br>
+
+    * 비밀번호 확인 : 
+    <input type="password" id="userPwd2">
+    <p>위의 비밀번호와 일치하게 입력하시오.</p><br>
+
+    * 이름 : 
+    <input type="text" id="userName" minlength="2" required>
+    <p>한글로만 이루어져야되며 2글자 이상으로 입력하시오.</p><br>
+
+    * 이메일:
+    <input type="email" >
+    <p>이메일 형식에 맞춰서 입력하시오.</p><br>
+
+    * 취미 : 
+    <input type="text" id="hobby" name="hobby" list= "hobbylist" placeholder="축구,농구,야구,독서, 등"> <br><br>
+    <!-- <input type="hidden" id="hobby"> -->
+    <datalist id="hobbylist">
+        <option value="축구">축구</option>
+        <option value="농구">농구</option>
+        <option value="야구">야구</option>
+        <option value="독서">독서</option>
+    </datalist>
+
+    * 거주지 :
+    <select name="address" id="address">
+        <option value="seoul" selected>서울</option>
+        <option value="incheon">인천</option>
+        <option value="busan">부산</option>
+    </select> <br><br>
+
+    <input type="submit" value="회원가입" onclick="return validate();">
+    <input type="reset" value="취소">
+    <br><br>
+</div>
+</form>
+
+
+<script>
+    function validate() {
+        // 아이디, 비밀번호, 비밀번호 확인(일치여부), 이름
+
+        // input 요소 객체들 가져다 놓기
+        const idInput = document.getElementById("userId");
+        const pwdInput1 = document.getElementById("userPwd1");
+        const pwdInput2 = document.querySelector("#userPwd2");
+        const nameInput = document.querySelector("#userName");
+
+        // 1) 아이디 유효성 검사
+        //    영소문자, 숫자로만 총 4~12글자로 이뤄져야함
+        //    단, 첫글자는 반드시 영문자로
+
+        let regExp = /^[a-z][a-z\d]{3,11}$/;     // [0-9] == \d {}대괄호는 바로앞에 []을 바라보기 때문에 범위를 잘 설정해야함.
+        if(!regExp.test(idInput.value)){
+            alert("유효한 아이디를 입력해주세요!");
+            idInput.select();
+            return false;
+        } 
+
+        // 2) 비밀번호 유효성 검사
+        //    영문자(대소문자), 숫자, 특수문자(!@#$%^&*)로 총 8~15글자로 이뤄져야함.
+
+        regExp = /^[a-z\d!@#$%^&*]{8,15}$/i;
+        if(!regExp.test(pwdInput1.value)){
+            alert("유효한 비밀번호를 입력해주세요!");
+            pwdInput1.value = "";
+            pwdInput1.focus();
+            return false; // 서버단에 전송X
+        }
+
+        // 3) 비밀번호 일치
+        if(pwdInput1.value != pwdInput2.value){
+            alert("동일한 비밀번호를 입력해주세요.");
+            pwdInput2.value = ""; // 지워지는 효과
+            pwdInput2.focus(); // 포커싱 효과
+            return false;
+        }
+
+        // 4) 이름
+        //    한글(결합형태 김자바)로만 2글자 이상 
+        regExp = /^[가-힣]{2,}$/;
+        if(!regExp.test(nameInput.value)){
+            alert("유효한 이름을 입력해주세요.");
+            nameInput.select();
+            return false;
+        }
+
+    }
+</script>
+
+    
+</body>
+</html>
