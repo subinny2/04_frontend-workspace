@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01_개요</title>
-    <!-- <script src="resources/js/jquery-3.6.3.min.js"></script>   // 오프라인 방식-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>     <!-- 온라인 방식 -->
+    <!-- <script src="resources/js/jquery-3.6.3.min.js"></script>   // 오프라인 방식 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>     온라인 방식
 </head>
 <body>
     <h1>jquery 개요</h1>
@@ -114,13 +114,15 @@
             // h3 요소들 선택해서 배경색 노란색으로 변경
             // > 순수 자바스크립트 방식
             
-            /*
+            
             const h3Arr = document.getElementsByTagName("h3"); // [h3요소객체, h3요소객체, h3요소객체 ...] h3요소들이 배열로써 담김
             // h3Arr.style.backgroundColor = "yellow";
-            for(let i in h3Arr) {
+            // console.log(h3Arr);
+            for(let i=0; i<h3Arr.length; i++) {
+                // console.log(i);
                 h3Arr[i].style.backgroundColor = "yellow";
             }
-            */
+            
 
             // > jQuery 방식
             $("h3").css("backgroundColor", "yellow");
