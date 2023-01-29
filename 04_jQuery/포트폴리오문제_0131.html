@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오문제_0131</title>
+    <style>
+       #btn{
+        padding-left: 120px;
+       } 
+    </style>
+</head>
+<body>
+    <form action="insert.no">
+    <fieldset>
+        <legend>회원 가입 양식</legend>
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="userId"></td>
+                <td><input type="button" id="btn_check" onclick="return test1();" value="중복확인">
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" id="userPwd"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" id="userPwd2"></td>
+            </tr>
+            <tr>
+                <td>지역</td>
+                <td>
+                    <input type="radio" id="seoul" name="region" value="seoul">
+                    <label for="seoul">서울</label>
+            
+                    <input type="radio" id="busan" name="region" value="busan">
+                    <label for="busan">부산</label>
+            
+                    <input type="radio" id="daegu" name="region" value="daegu">
+                    <label for="daegu">대구</label></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div id="btn">
+        <button type="reset"onclick="test2();">초기화</button>
+        <button type="submit" id="input_submit" onclick="return test3();">회원가입</button>
+        </div>
+    </fieldset>
+</form>
+    
+<script>
+    function test1(){
+        const idInput = document.getElementById("userId");
+        let regExp = /^[a-z\d!@#]{6,12}$/;
+        if(!regExp.test(idInput.value)){
+            userId.style.backgroundColor = "red";
+            return false;
+        } else{
+            userId.style.backgroundColor = "green";
+            return false;
+        }
+    }
+
+    function test2(){
+        userId.style.backgroundColor = "";
+    }
+
+    function test3(){
+        // const seoul = document.getElementById("seoul");
+        // const busan = document.getElementById("busan");
+        // const daegu = document.getElementById("daegu");
+        
+        if(!(daegu.checked)&!(seoul.checked)&!(busan.checked)){
+            alert("지역을 선택해주세요.");
+            return false;
+        }
+    }
+
+
+
+
+       
+</script>
+</body>
+</html>
