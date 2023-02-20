@@ -31,15 +31,16 @@
             </tr>
             <tr>
                 <td>지역</td>
-                <td>
-                    <input type="radio" id="seoul" name="region" value="seoul">
+                <td style="font-size: 15px;">
                     <label for="seoul">서울</label>
-            
-                    <input type="radio" id="busan" name="region" value="busan">
+                    <input type="radio" id="seoul" name="region" value="seoul">
+
                     <label for="busan">부산</label>
-            
+                    <input type="radio" id="busan" name="region" value="busan">
+
+                    <label for="daegu">대구</label>
                     <input type="radio" id="daegu" name="region" value="daegu">
-                    <label for="daegu">대구</label></td>
+                </td>
             </tr>
         </table>
 
@@ -55,7 +56,7 @@
 <script>
     function test1(){
         const idInput = document.getElementById("userId");
-        let regExp = /^[a-z\d!@#]{6,12}$/;
+        let regExp = /^[a-z][a-zA-Z\d!@#]{5,11}$/;
         if(!regExp.test(idInput.value)){
             userId.style.backgroundColor = "red";
             return false;
@@ -79,11 +80,7 @@
             return false;
         }
     }
-
-
-
-
-       
+   
 </script>
 </body>
 </html>
